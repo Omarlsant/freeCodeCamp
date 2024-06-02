@@ -1,10 +1,19 @@
-let character = 'Hello';
-let count = 8;
+const character = "#";
+const count = 8;
+const rows = [];
 
-let rows = ["Naomi", "Quincy", "CamperChan"];
-let popped;
+function padRow(rowNumber, rowCount) {
+    return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
+}
 
-let pushed;
-pushed = rows.push("freeCodeCamp");
+for (let i = 1; i <= count; i++) {
+    rows.push(padRow(i,count));
+}
 
-console.log(pushed  );
+let result = "";
+
+for (const row of rows) {
+    result = result + "\n" + row;
+}
+
+console.log(result);
